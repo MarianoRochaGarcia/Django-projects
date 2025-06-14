@@ -2,10 +2,34 @@
 {% extends './layouts/base.html' %}
 {% load static %}
 
+{% block styles %}
+    <link rel = 'stylesheet' href = "{% static 'css/galeria.css' %}">
+{% endblock %}
+
 
 {% block title %}Galeria{% endblock%}
 
 {% block content%}
-    <h2>NOSE</h2>
-    <h1>SIII</h1>
+
+<article class='post-foto'>
+    <img src="{% static 'img/test.jpeg' %}" alt='Imagen' class='imagen'>
+    <h2>NOTICIA 1</h2>
+    <p>
+        {% lorem 1 %}
+    </p>
+    </article>
+<article class='post-foto'>
+    <img src="{% static 'img/test.jpeg' %}" alt='Imagen' class='imagen'>
+    <h2>NOTICIA 1</h2>
+    <p>
+        {% lorem 1 %}
+    </p>
+</article>
+<article class='post-foto'>
+    <img src="{% static 'img/test.jpeg' %}" alt='Imagen' class='imagen'>
+    <h2>NOTICIA 1</h2>
+    <p>
+        {% lorem 1 %}
+    </p>
+</article>
 {% endblock %}
