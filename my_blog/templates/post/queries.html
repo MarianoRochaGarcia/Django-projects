@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Buscando autor donde email id es menor o igual a 15</h3>
+    <ul>
+        {% for elm in filtered %}
+            <li>{{elm.name}}</li>
+        {% endfor%}
+    </ul>
+
+    <h3>Elementos ordenados por email</h3>
+    <ul>
+        {% for order in orders %}
+            <li>{{ order.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Busqueda limitada y con offset</h3>
+    <ul>
+        {% for offset in offsets %}
+            <li>{{ offset.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Obteniendo los diez primeros emails</h3>
+    <ul>
+        {% for limit in limits %}
+            <li>{{ limit.email }}</li>
+        {% endfor%}
+    </ul>
+
+    <h3>Obteniendo un unico elemento (filtrado por id)</h3>
+    <p>{{ author.email }}</p>
+
+    {% comment %} <h3>Buscando autor donde email = dunnperry@example.org</h3>
+    <ul>
+        {% for elm in filtered %}
+        <li>{{elm.name}} | {{elm.email}}</li>
+        {% endfor%}
+    </ul> {% endcomment %}
+
+    <h3>Todos los autores</h3>
+
+    <ul>
+        {% for author in authors %}
+        <li>
+            {{author.name}} ( {{author.email}})
+        </li>
+        {% endfor%}
+    </ul>
+
+    <h3>Total de autores: {{ authors|length}}</h3>
+    
+</body>
+</html>
